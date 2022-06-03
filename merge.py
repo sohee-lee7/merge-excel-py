@@ -34,6 +34,12 @@ def merge_excel(directory, target_header, regex):
         result[sheetname] = format_data
 
 
+  result_files = []
+
   # 합산된 시트 데이터를 하나의 파일로 만들기
   for key in result.keys():
     px.save_as(array=result[key], dest_file_name=directory + '/' + key + '.csv', sheet_name=key)
+    result_files.append(key + '.csv')
+
+  # 결과값을 생성된 파일이름으로 보내주기
+  return result_files
