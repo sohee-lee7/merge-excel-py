@@ -41,6 +41,8 @@ def merge_excel(directory, target_header, regex):
         # directory에 없는 sheet면 헤더가 있는 전체 format_data 넣기
         result[sheetname] = format_data
 
+      book.close()
+
 
   result_files = []
 
