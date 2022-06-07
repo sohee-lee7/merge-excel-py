@@ -1,8 +1,7 @@
-from ntpath import join
 import tkinter as tk
 from tkinter import filedialog
 from tkinter import messagebox
-from merge import merge_excel
+from merge_xlwings import merge_excel
 
 # 윈도우 창 만들기
 window = tk.Tk()
@@ -56,8 +55,8 @@ def merge_btn_command():
     try:
       result_files = merge_excel(directory=folder_label["text"], target_header=header_entry.get(), regex=regex_entry.get())
       messagebox.showinfo("success", ','.join(result_files) + "파일들이 생성되었습니다.")
-    except:
-      messagebox.showerror("error", "merge 중에 에러가 발생했습니다.")
+    except Exception as inst:
+      messagebox.showerror("error", inst)
   else:
     messagebox.showwarning("waring", "merge를 실행할 수 없습니다.")
 
