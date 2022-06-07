@@ -46,7 +46,7 @@ def merge_excel(directory, target_header, regex):
         # directory에 없는 sheet면 헤더가 있는 전체 format_data 넣기
         result[sheetname] = format_data
 
-      book.close()
+    book.close()
 
   app.quit()
 
@@ -62,10 +62,10 @@ def merge_excel(directory, target_header, regex):
   for key in result.keys():
     if index == 0:
       px.save_as(array=result[key], dest_file_name=directory + '/' + 'CH.csv', sheet_name=key)
-      result_files.append(key + '.csv')
+      result_files.append('CH.csv')
     elif index == 1:
       px.save_as(array=result[key], dest_file_name=directory + '/' + 'HTH.csv', sheet_name=key)
-      result_files.append(key + '.csv')
+      result_files.append('HTH.csv')
     else:
       px.save_as(array=result[key], dest_file_name=directory + '/' + key + '.csv', sheet_name=key)
       result_files.append(key + '.csv')
