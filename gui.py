@@ -52,7 +52,7 @@ def merge_btn_command():
   print(folder_label["text"] + ", " + header_entry.get() + ", " + regex_entry.get())
 
   # 선택된 폴더와 변경할 헤더 이름, 정규식 모두 값이 있을 뗴만 머지 실행
-  if folder_label["text"] != "없음" and header_entry.get() and regex_entry.get():
+  if folder_label["text"] != "없음":
     try:
       result_files = merge_excel(directory=folder_label["text"], target_header=header_entry.get(), regex=regex_entry.get())
       messagebox.showinfo("success", ','.join(result_files) + "파일들이 생성되었습니다.")

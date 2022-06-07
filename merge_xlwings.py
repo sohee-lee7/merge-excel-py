@@ -31,7 +31,10 @@ def merge_excel(directory, target_header, regex):
       origin_data = sheet.range((1,1),(num_row,num_col)).value
       print(origin_data)
 
-      format_data = format_data_array(origin_data, target_header, regex)
+      if target_header and regex:
+        format_data = format_data_array(origin_data, target_header, regex)
+      else:
+        format_data = origin_data
 
       # 시트별로 데이터를 분류하기 위해 directory 형태로 저장
       if sheetname in result:
