@@ -36,6 +36,7 @@ header_label = tk.Label(window, text="변경할 헤더")
 header_label.grid(row=2, column=1)
 
 header_entry = tk.Entry(window)
+header_entry.insert(0, "WordLine")
 header_entry.grid(row=2, column=2)
 
 # 정규식
