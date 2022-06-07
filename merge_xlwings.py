@@ -11,6 +11,8 @@ def merge_excel(directory, target_header, regex):
 
   result = {}
 
+  app = xw.App()
+
   for filename in filelist:
     if '.xlsx' not in filename:
       continue
@@ -46,6 +48,7 @@ def merge_excel(directory, target_header, regex):
 
       book.close()
 
+  app.quit()
 
   result_files = []
 
